@@ -78,7 +78,8 @@ jobs:
               continue-on-error: true
               run: |
                   LINE_RATE=$(grep -oE '<coverage [^>]*line-rate="[0-9.]+"' coverage/cobertura.xml \
-                      | grep -oE 'line-rate="[0-9.]+"' | grep -oE '[0-9.]+')
+                      | grep -oE 'line-rate="[0-9.]+"' | grep -oE '[0-9.]+' || true)
+                  LINE_RATE=${LINE_RATE:-0}
                   PCT=$(awk -v r="$LINE_RATE" 'BEGIN { printf "%.2f", r*100 }')
                   echo "Coverage: ${PCT}%"
                   awk -v pct="$PCT" 'BEGIN { exit !(pct+0 >= 0) }'
@@ -90,7 +91,8 @@ jobs:
               continue-on-error: true
               run: |
                   LINE_RATE=$(grep -oE '<coverage [^>]*line-rate="[0-9.]+"' coverage/cobertura.xml \
-                      | grep -oE 'line-rate="[0-9.]+"' | grep -oE '[0-9.]+')
+                      | grep -oE 'line-rate="[0-9.]+"' | grep -oE '[0-9.]+' || true)
+                  LINE_RATE=${LINE_RATE:-0}
                   PCT=$(awk -v r="$LINE_RATE" 'BEGIN { printf "%.2f", r*100 }')
                   COLOR=$(awk -v p="$PCT" 'BEGIN { if (p>=80) print "brightgreen"; else if (p>=50) print "yellow"; else print "red" }')
                   printf '{"schemaVersion":1,"label":"coverage","message":"%s%%","color":"%s"}\n' \

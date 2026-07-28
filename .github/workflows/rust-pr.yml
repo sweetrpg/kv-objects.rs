@@ -69,6 +69,7 @@ jobs:
         continue-on-error: true
         run: |
           LINE_RATE=$(grep -oE '<coverage [^>]*line-rate="[0-9.]+"' coverage/cobertura.xml \
-              | grep -oE 'line-rate="[0-9.]+"' | grep -oE '[0-9.]+')
+              | grep -oE 'line-rate="[0-9.]+"' | grep -oE '[0-9.]+' || true)
+          LINE_RATE=${LINE_RATE:-0}
           PCT=$(awk -v r="$LINE_RATE" 'BEGIN { printf "%.2f", r*100 }')
           awk -v pct="$PCT" 'BEGIN { exit !(pct+0 >= 0) }'

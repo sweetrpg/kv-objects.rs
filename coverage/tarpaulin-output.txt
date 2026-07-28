@@ -1,0 +1,31 @@
+[2m2026-07-28T13:37:59.379295Z[0m [32m INFO[0m [2mcargo_tarpaulin::config[0m[2m:[0m Creating config
+[2m2026-07-28T13:37:59.427395Z[0m [32m INFO[0m [2mcargo_tarpaulin[0m[2m:[0m Running Tarpaulin
+[2m2026-07-28T13:37:59.427409Z[0m [32m INFO[0m [2mcargo_tarpaulin[0m[2m:[0m Building project
+[2m2026-07-28T13:37:59.441495Z[0m [32m INFO[0m [2mcargo_tarpaulin::cargo[0m[2m:[0m Cleaning project
+[2m2026-07-28T13:38:05.213237Z[0m [32m INFO[0m [2mcargo_tarpaulin::process_handling[0m[2m:[0m running /home/runner/work/kv-objects.rs/kv-objects.rs/target/debug/deps/sweetrpg_kv_objects-e06cace6b8362761
+[2m2026-07-28T13:38:05.213317Z[0m [32m INFO[0m [2mcargo_tarpaulin::process_handling[0m[2m:[0m Setting LLVM_PROFILE_FILE
+
+running 12 tests
+test events::expression::tests::serialize_expression_event ... ok
+test events::expression::tests::serialize_response ... ok
+test events::key::tests::serialize_key_event ... ok
+test events::key::tests::serialize_response ... ok
+test events::response::tests::serialize_response ... ok
+test events::value::tests::serialize_response ... ok
+test events::value::tests::serialize_value_event ... ok
+test models::key::tests::serialize_key_model ... ok
+test vo::key::tests::serialize_key_vo ... ok
+test vo::snapshot::tests::serialize_snapshot_vo ... ok
+test vo::store::tests::serialize_store_vo ... ok
+test vo::value::tests::serialize_value_vo ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+[2m2026-07-28T13:38:05.216933Z[0m [32m INFO[0m [2mcargo_tarpaulin::statemachine::instrumented[0m[2m:[0m For binary: target/debug/deps/sweetrpg_kv_objects-e06cace6b8362761
+[2m2026-07-28T13:38:05.216948Z[0m [32m INFO[0m [2mcargo_tarpaulin::statemachine::instrumented[0m[2m:[0m Generated: target/tarpaulin/profraws/sweetrpg_kv_objects-e06cace6b8362761_14552401134731618870_0-5016.profraw
+[2m2026-07-28T13:38:05.216953Z[0m [32m INFO[0m [2mcargo_tarpaulin::statemachine::instrumented[0m[2m:[0m Merging coverage reports
+[2m2026-07-28T13:38:05.226676Z[0m [32m INFO[0m [2mcargo_tarpaulin::statemachine::instrumented[0m[2m:[0m Mapping coverage data to source
+[2m2026-07-28T13:38:05.248142Z[0m [32m INFO[0m [2mcargo_tarpaulin::report[0m[2m:[0m Coverage Results:
+[2m2026-07-28T13:38:05.248774Z[0m [32m INFO[0m [2mcargo_tarpaulin::report::html[0m[2m:[0m HTML report written to /home/runner/work/kv-objects.rs/kv-objects.rs/coverage/tarpaulin-report.html
+|| Tested/Total Lines:
+No coverable lines found
